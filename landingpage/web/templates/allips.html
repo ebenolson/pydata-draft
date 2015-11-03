@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+<div class="text-center">
+  <h1>All IP addresses</h1>
+</div>
+
+<br>
+<hr>
+
+<div>
+  {% for ip in ips %}
+    <h4 class="well"><strong>{{ip.ip}} - {{ip.used}}</strong> - <em>{{ip.date_posted.strftime('%Y-%m-%d')}}</em></h4>
+  {% endfor %}
+</div>
+
+{% endblock %}
