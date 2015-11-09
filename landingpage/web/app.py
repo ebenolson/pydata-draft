@@ -19,14 +19,20 @@ from models import *
 
 @app.route('/')
 def index():
-    ips = IP.query.order_by(IP.date_posted.desc()).all()
-    return render_template('index.html', posts=ips)
+    return render_template('index.html')
 
 
 @app.route('/allips')
 def allips():
     ips = IP.query.order_by(IP.date_posted.desc()).all()
     return render_template('allips.html', ips=ips)
+
+
+@app.route('/removeallips')
+def removeallips():
+    IP.query.delete()
+    db.session.commit()
+    return redirect('/')
 
 
 @app.route('/addip', methods=['POST'])

@@ -7,21 +7,34 @@
 </div>
 
 <br>
-
-<form action="/" method="POST">
-  <div class="form-group">
-    <input name="text" class="form-control input-lg" type="text" placeholder="Enter a message" required>
-  </div>
-  <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
-</form>
-
-<br>
 <hr>
 
-<div>
-  {% for post in posts %}
-    <h4 class="well"><strong>{{post.ip}} - {{post.used}}</strong> - <em>{{post.date_posted.strftime('%Y-%m-%d')}}</em></h4>
-  {% endfor %}
+<div class="text-center">
+  <h4><a href="{{ url_for('notebook') }}">Access an AWS notebook server to follow along</a></h4>
 </div>
+
+<h1 id="neural-networks-with-theano-and-lasagne">Neural networks with Theano and Lasagne</h1>
+<h2 id="abstract">Abstract</h2>
+<p>Lasagne, a lightweight framework built on Theano, makes it simple to define, train, and apply neural networks. The workshop will provide an introduction to these libraries, and a guided exploration of several interesting applications of convolutional and recurrent networks. Familiarity with Python and basic neural network terminology will be assumed (introductory materials will be available prior to the conference). An AWS instance with the necessary software and data will be provided for each participant.</p>
+<h2 id="syllabus">Syllabus</h2>
+<ol>
+<li>Theano basics <br>
+<ul><li>Symbolic variables/tensors, expressions</li>
+<li>Functions, shared variables and updates</li></ul></li>
+<li>Overview of Lasagne <br>
+<ul><li>Layer classes and building a network</li>
+<li>Objectives, optimizers, and training</li></ul></li>
+<li>Convolutional neural networks <br>
+<ul><li>Image classification</li>
+<li>Fine-tuning a pretrained network</li>
+<li>Style transfer (“Neural Art”)</li></ul></li>
+<li>Recurrent neural networks <br>
+<ul><li>Language model (text generation)</li>
+<li>CNN + RNN (image captioning)</li></ul></li>
+<li>Extending Lasagne <br>
+<ul><li>Defining custom Layers</li>
+<li>Q&amp;A / Audience topics</li></ul></li>
+</ol>
+
 
 {% endblock %}
