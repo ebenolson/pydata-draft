@@ -59,7 +59,9 @@ def notebook():
 
 @app.route('/resetip')
 def resetip():
-    del session['notebookip']
+    if 'notebookip' in session:
+        del session['notebookip']
+        db.session.commit()
     return redirect('/')
 
 
